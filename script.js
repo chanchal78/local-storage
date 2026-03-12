@@ -45,3 +45,22 @@ const deleteItem = () =>{
 
     localStorage.clear(); //to remove all of the items
 }
+
+const darkTheme = () =>{
+    localStorage.setItem('theme', 'dark');
+
+    let theme = localStorage.getItem('theme');
+
+    if(theme === 'dark'){
+        document.body.style.background = 'black';
+    }
+}
+const darkThemeOff = () =>{
+    localStorage.setItem('theme', 'light');
+
+    let theme = localStorage.getItem('theme');
+
+    if(theme === 'light'){
+        document.body.style.background = 'white';
+    }
+}
