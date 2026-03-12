@@ -23,6 +23,7 @@ const setObjectToLS = () =>{
         age: 26,
         address: "Noakhali, Bangladesh",
     };
+
     const personJSON = JSON.stringify(person);
     localStorage.setItem('person', personJSON);
     // console.log(person);
@@ -31,6 +32,16 @@ const setObjectToLS = () =>{
 
 const getObjectFromLS = () =>{
     const personJSON = localStorage.getItem('person');
+
     const personParse = JSON.parse(personJSON);
+
     console.log(personParse);
+    console.log('name:', personParse.name); //accessing name from person object
+}
+
+const deleteItem = () =>{
+
+    localStorage.removeItem('person'); //to remove an item form the storage
+
+    localStorage.clear(); //to remove all of the items
 }
