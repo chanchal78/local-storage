@@ -46,21 +46,27 @@ const deleteItem = () =>{
     localStorage.clear(); //to remove all of the items
 }
 
-const darkTheme = () =>{
-    localStorage.setItem('theme', 'dark');
+// -----------------------------------------------
 
+const applyTheme = () =>{
     let theme = localStorage.getItem('theme');
 
     if(theme === 'dark'){
         document.body.style.background = 'black';
     }
-}
-const darkThemeOff = () =>{
-    localStorage.setItem('theme', 'light');
-
-    let theme = localStorage.getItem('theme');
-
-    if(theme === 'light'){
+    else if(theme === 'light'){
         document.body.style.background = 'white';
     }
+}
+
+applyTheme();
+
+const darkTheme = () =>{
+    localStorage.setItem('theme', 'dark');
+    applyTheme();    
+}
+
+const darkThemeOff = () =>{
+    localStorage.setItem('theme', 'light');
+    applyTheme();
 }
