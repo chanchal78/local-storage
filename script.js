@@ -70,3 +70,14 @@ const darkThemeOff = () =>{
     localStorage.setItem('theme', 'light');
     applyTheme();
 }
+
+//using addEventListener let multiple functions work with the same button, 
+//what we can't do with 'onClick', because onClick overwrites the function, so only last one runs
+const btn = document.getElementById('btn');
+btn.addEventListener('click', ()=>{
+    console.log("hello");
+});
+btn.addEventListener('click', ()=>{
+    console.log("world");
+});
+//both functions run when btn is clicked
